@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func DisplayState() {
+func DisplayState() State {
 	oregon := State{
 		Name:    "Oregon",
 		Rivers:  []string{"Coloumbia Gorge", "Tualatin"},
@@ -20,4 +20,5 @@ func DisplayState() {
 		log.Println(err)
 	}
 	fmt.Println(string(jsonData))
+	return oregon
 }
