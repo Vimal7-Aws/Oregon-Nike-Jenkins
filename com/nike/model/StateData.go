@@ -10,7 +10,7 @@ import (
 func DisplayState() State {
 	oregon := State{
 		Name:    "Oregon",
-		Rivers:  []string{"Coloumbia Gorge", "Tualatin"},
+		Rivers:  []string{"Coloumbia Gorge -v2", "Tualatin - v2"},
 		Created: time.Now(),
 	}
 

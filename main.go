@@ -5,19 +5,20 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"go-stateservice/com/nike/model"
-	"log"
 	"net/http"
 	"strconv"
 )
 
 func main() {
+	fmt.Println("Starting the server at 7070 this is v2.................")
+
 	r := mux.NewRouter()
 
 	r.HandleFunc("/", healthHandler).Methods("GET")
 	r.HandleFunc("/states", statesHandler).Methods("GET")
 	r.HandleFunc("/health", HealthCheck).Methods("GET")
 
-	fmt.Println("Starting the server at 7070")
+	fmt.Println("Starting the server at 7070 this is v2")
 	_ = http.ListenAndServe(":7070", r)
 	//model.DisplayState()
 
@@ -28,13 +29,10 @@ func healthHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func statesHandler(w http.ResponseWriter, r *http.Request) {
-	log.Print("States Invoked")
-	fmt.Println("states invoked")
+	fmt.Println("states invoked v2 invoked")
 	oregon := model.DisplayState()
-	//log.Print(oregon)
 	err := json.NewEncoder(w).Encode(oregon)
 	_ = err
-	//log.Print(err)
 }
 
 func HealthCheck(w http.ResponseWriter, r *http.Request) {
